@@ -4,7 +4,7 @@
 
 # Pathology Image Workflow
 ● Extracted 803 cryogenic biopsy slides for Gastrointestinal Cancer from the Personalized OncoGenomics (POG) repository    
-● Subjected paraffin-embedded Whole-Slide Images to rigorous quality control for artefact removal using the HistoQC tool
+● Subjected paraffin-embedded Whole-Slide Images to rigorous quality control for artefact removal using the HistoQC tool           
 ● Developed an interactive platform in Jupyter notebook to select masks for mapped stained tissue profiles with 95% accuracy
 
 # Oncogenomic Expression Pipeline
