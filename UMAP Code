@@ -1,0 +1,49 @@
+# Perform UMAP dimensionality reduction
+reducer = umap.UMAP(random_state=42)
+feat_embedded = reducer.fit_transform(feat)
+
+# Debugging: Check the shapes and lengths of arrays
+print(f"feat_embedded shape: {feat_embedded.shape}")
+print(f"Length of filtered_subtype_data: {len(filtered_subtype_data)}")
+
+# Ensure that filtered_subtype_data has the correct length by repeating each subtype 150 times
+filtered_subtype_data_repeated = np.repeat(filtered_subtype_data, 150)
+print(f"Adjusted length of filtered_subtype_data_repeated: {len(filtered_subtype_data_repeated)}")
+
+# Define a custom color palette to ensure fixed colors for each subtype
+custom_palette = {
+    'LumP': '#1f77b4',        # Blue
+    'LumNS': '#ff7f0e',       # Orange
+    'LumU': '#2ca02c',        # Green
+    'Stroma-rich': '#d62728', # Red
+    'Ba/Sq': '#9467bd',       # Purple
+    'NE-like': '#8c564b'      # Brown
+}
+
+# Visualization
+fig, ax = plt.subplots(figsize=(12, 8))
+df = pd.DataFrame({'x': feat_embedded[:, 0], 'y': feat_embedded[:, 1], 'subtype': filtered_subtype_data_repeated})
+sns.scatterplot(data=df, x="x", y="y", hue='subtype', ax=ax, palette=custom_palette, edgecolor=None)
+handles, labels = ax.get_legend_handles_labels()
+
+# Ensure the legend follows the specified order
+order = ['LumP', 'LumNS', 'LumU', 'Stroma-rich', 'Ba/Sq', 'NE-like']
+ordered_handles = [handles[labels.index(subtype)] for subtype in order]
+ordered_labels = [labels[labels.index(subtype)] for subtype in order]
+ax.legend(ordered_handles, ordered_labels, title='Subtype:', loc='lower left')
+
+# Set the plot title and axis labels
+struct = f"{dataset}_{'_'.join(model_list)}_{magnification}"
+plt.title('UMAP Visualization (Patch-Level): ' + struct)
+plt.xlabel('UMAP_1')
+plt.ylabel('UMAP_2')
+
+# Show the plot
+plt.show()
+
+try:
+    os.makedirs(saving_path, exist_ok=True)
+except OSError as error:
+    print(f"Directory '{saving_path}' cannot be created")
+fig.savefig(os.path.join(saving_path, f'scatter_plot_{struct}.png'), dpi=300)
+print('All is well')
