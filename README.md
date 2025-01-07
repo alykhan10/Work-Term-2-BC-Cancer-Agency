@@ -1,6 +1,6 @@
 # Work Term #2: BC Cancer Agency
-# Research Assistant, Artificial Intelligence in Medicine Lab 
-# Supervisor: Ali Bashashati, UBC School of Biomedical Engineering
+  Research Assistant, Artificial Intelligence in Medicine Lab 
+  Supervisor: Ali Bashashati, UBC School of Biomedical Engineering
 
 # Pathology Image Workflow
 ● Extracted 803 cryogenic biopsy slides for Gastrointestinal Cancer from the Personalized OncoGenomics (POG) repository    
