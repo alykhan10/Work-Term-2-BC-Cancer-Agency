@@ -1,5 +1,5 @@
 # Work Term #2: BC Cancer Agency
-  Research Assistant, Artificial Intelligence in Medicine Lab 
+  Research Assistant, Artificial Intelligence in Medicine Lab          
   Supervisor: Ali Bashashati, UBC School of Biomedical Engineering
 
 # Pathology Image Workflow
