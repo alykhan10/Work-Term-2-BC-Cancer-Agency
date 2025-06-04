@@ -3,11 +3,11 @@
   Supervisor: Ali Bashashati, UBC School of Biomedical Engineering
 
 # Pathology Image Workflow
-● Extracted 803 cryogenic biopsy slides for Gastrointestinal Cancer from the Personalized OncoGenomics (POG) repository    
-● Subjected paraffin-embedded Whole-Slide Images to rigorous quality control for artefact removal using the HistoQC tool           
-● Developed an interactive platform in Jupyter notebook to select masks for mapped stained tissue profiles with 95% accuracy
+● Extracted 803 images for patients with gastrointestinal cancer from Personalized OncoGenomics directory                           
+● Subjected paraffin-embedded whole-slide images to quality control using HistoQC for artefact removal                              
+● Developed an interactive Jupyter notebook with 6 configs for selection of masks mapping to the tissue                              
 
 # Oncogenomic Expression Pipeline
-● Obtained 1500 patches and 900 feature vectors for 406 patients with Muscle-Invasive Bladder Cancer using PyTorch library    
-● Executed nearest-centroid transcriptomic classifier in R to segregate The Cancer Genome Atlas (TCGA) data into 6 subtypes    
-● Generated bag-level encodings using Multiple Instance Learning and clustered groups through UMAP dimensionality reduction
+● Obtained 1500 patches and 900 features for 406 patients with muscle-invasive bladder cancer in PyTorch                                
+● Executed nearest-centroid classifier in R to divide The Cancer Genome Atlas (TCGA) data into 6 subtypes                         
+● Generated encodings using multiple instance learning and clustered patient-groups through UMAP                                          
